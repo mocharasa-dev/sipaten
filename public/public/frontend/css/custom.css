@@ -1,0 +1,555 @@
+/*========================================================================================
+    Project     : Sipaten (Web Pelayanan Administrasi Online Kecamatan)
+    Created by  : Moch Arief Rahman Saleh (Junior Programmer)
+	Company     : Dinas Komunikasi dan Informatika Kabupaten Subang
+    Created November 2020
+    ~ Menuju tak terbatas dan melampauinya ~
+    ~ Hidup adalah udunan ~
+    ~ Bersatu kita teguh bercerai kita kawin lagi ~    
+=========================================================================================*/
+
+/*===========================================================================
+                                Utility Setup
+===========================================================================*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;	 
+    height: 100%; 
+    overflow-x: hidden;
+}
+#content-desktop {display: block;}
+#content-mobile {display: none;}
+@media screen and (max-width:600px){
+  canvas, #content-desktop {display: none;}
+  #content-mobile {display: block;}
+}
+@media screen and (max-width:800px){
+    .dropdown-item {       
+        white-space: normal;      
+      }
+  }
+@keyframes slideleft {
+    from { background-position: 0%; }
+    to { background-position: 90000%; }
+}
+@media only screen and (max-device-width: 1366px) {
+    main {
+        background-attachment: scroll;
+    }
+}
+/*[ BUTTON BACK TO TOP ]*/
+.btn-back-to-top {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    bottom: -40px;
+    right: 40px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #17a2b8;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+.symbol-btn-back-to-top {
+    font-size: 18px;
+    color: white;
+    line-height: 1em;
+}
+.btn-back-to-top:hover {opacity: 1;}
+@media (max-width: 575px) {
+    .btn-back-to-top {
+        bottom: 0px;
+        right: 15px;
+    }
+}
+.show-btn-back-to-top {bottom: 0;}
+
+/*===========================================================================
+                                    TEXT
+===========================================================================*/
+.text-shadow{
+    text-shadow: 2px 2px #0f0110;
+}
+.text-tema{
+    color: #17a2b8;
+    text-decoration: none;
+}
+.font-kecil-1 {
+    font-size: 12px;
+    line-height: 1.7;
+}
+.font-kecil-2 {
+    font-size: 14px;
+    line-height: 1.7;
+}
+.font-kecil-3 {
+    font-size: 15px;
+    line-height: 1.333333;
+}
+.font-sedang-1 {
+    font-size: 18px;
+    line-height: 1.333333;
+}
+.font-sedang-2 {
+    font-size: 20px;
+    line-height: 1.25;
+}
+.font-sedang-3 {
+    font-size: 24px;
+    line-height: 1.3;
+}
+.font-besar-1 {
+    font-size: 22px;
+    line-height: 1.272727;
+}
+.font-besar-2 {
+    font-size: 30px;
+    line-height: 1.3;
+}
+.font-besar-3 {
+    font-size: 36px;
+    line-height: 1.333333;
+}
+
+/*===========================================================================
+                                PAGINATION
+===========================================================================*/
+.pagination {
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+}
+
+/*===========================================================================
+                                SEARCH BUTTON
+===========================================================================*/
+.openBtn {
+  color: #f1f1f1;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.openBtn:hover {
+  background: #f1f1f1;
+  color: #33353d;
+}
+.overlay-search {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+}
+.overlay-content {
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+.overlay-search .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+}
+.overlay-search .closebtn:hover {
+  color: #ccc;
+}
+.overlay-search input[type=text] {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: white;
+}
+.overlay-search input[type=text]:hover {
+  background: #f1f1f1;
+}
+.overlay-search button {
+  float: left;
+  width: 20%;
+  padding: 19px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.overlay-search button:hover {
+  background: #bbb;
+}
+
+/*===========================================================================
+                                    FOOTER
+===========================================================================*/
+footer {
+    padding: 10px;
+    overflow: auto;
+}
+.line-footer-white{
+    width: 100%;
+    height: 60px;
+    background-image: url('../img/footer.png');
+    overflow: hidden;
+    background-repeat:repeat-x;
+    background-position: bottom;
+    background-size: contain;
+}
+.line-footer-black{
+    width: 100%;
+    height: 60px;
+    background-image: url('../img/footerblack.png');
+    background-repeat:repeat-x;
+    background-position: bottom;
+    overflow: hidden;
+    background-size: contain;
+}
+.line-footer-grey{
+    width: 100%;
+    height: 60px;
+    background-image: url('../img/footergrey.png');
+    background-repeat:repeat-x;
+    background-position: bottom;
+    overflow: hidden;
+    background-size: contain;
+}
+.site-footer{    
+    position: relative;
+    background-color:#17a2b8;
+    padding:25px 0 10px;
+    font-size:15px;
+    line-height:24px;
+    color:#f1f1f1;
+}
+.site-footer hr{
+    border-top-color:#bbb;
+    opacity:0.5
+}
+.site-footer hr.small{
+    margin:20px 0
+}
+.site-footer h6{
+    color:#fff;
+    font-size:16px;
+    text-transform:uppercase;
+    margin-top:5px;
+    letter-spacing:2px
+}
+.site-footer a{
+    color:#737373;
+}
+.site-footer a:hover{
+    color:#3366cc;
+    text-decoration:none;
+}
+.footer-links{
+    padding-left:0;
+    list-style:none
+}
+ .footer-links li{
+    display:block
+}
+.footer-links a{
+    color:#f1f1f1;
+ }
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover{
+    color:#fff;
+    text-decoration:none;
+}
+ .footer-links.inline li{
+    display:inline-block
+ }
+.site-footer .social-icons{
+    text-align:right
+}
+.site-footer .social-icons a{
+    width:40px;
+    height:40px;
+    line-height:40px;
+    padding-top: 11px;
+    margin-left:6px;
+    margin-right:0;
+    border-radius:100%;
+    background-color:#33353d
+}
+.copyright-text{
+    margin:0;
+    color:#fff;
+}
+@media (max-width:991px){
+    .site-footer [class^=col-]{
+        margin-bottom:30px
+    }
+}
+@media (max-width:767px){
+    .site-footer{
+      padding-bottom:0
+    }
+    .site-footer .copyright-text,.site-footer .social-icons{
+      text-align:center
+    }
+}
+.social-icons{
+    padding-left:0;
+    margin-bottom:0;
+    list-style:none
+}
+.social-icons li{
+    display:inline-block;
+    margin-bottom:4px
+}
+.social-icons li.title{
+    margin-right:15px;
+    text-transform:uppercase;
+    color:#96a2b2;
+    font-weight:700;
+    font-size:13px
+}
+.social-icons a{
+    background-color:#eceeef;
+    color:#818a91;
+    font-size:16px;
+    display:inline-block;
+    line-height:44px;
+    width:44px;
+    height:44px;
+    text-align:center;
+    margin-right:8px;
+    border-radius:100%;
+    -webkit-transition:all .2s linear;
+    -o-transition:all .2s linear;
+    transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover{
+    color:#fff;
+    background-color:#29aafe
+}
+.social-icons.size-sm a{
+    line-height:34px;
+    height:34px;
+    width:34px;
+    font-size:14px
+}
+.social-icons a.facebook{
+    color:#3b5998;
+    background-color: #fff;
+}
+.social-icons a.facebook:hover{
+    background-color:#3b5998;
+    color: #fff;
+}
+.social-icons a.twitter{
+    color:#00aced;
+    background-color: #fff;
+}
+.social-icons a.twitter:hover{
+    background-color:#00aced;
+    color: #fff;
+}
+.social-icons a.instagram{
+    color:#fa2e7c;
+    background-color: #fff;
+}
+.social-icons a.instagram:hover{
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    color: #fff;
+}  
+@media (max-width:767px){
+    .social-icons li.title{
+      display:block;
+      margin-right:0;
+      font-weight:600
+    }
+}
+  
+/*===========================================================================
+                                CONTENT
+===========================================================================*/
+#welcome {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.viewport-header {
+    position: relative;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main {
+    position: relative;
+    background-image: url('../img/bg-paralax.png');
+    background-attachment: fixed;
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: slideleft 4000s infinite linear;
+    -webkit-animation: slideleft 9000s infinite linear;    
+    overflow: auto;
+    padding: 15px;
+}
+.bg-parallax{
+    position: relative;
+    background-image: url('../img/bg-city.png');
+    background-attachment: fixed;    
+    background-size: cover;
+    overflow: hidden;
+}
+.btn-tema{
+    background-color: #17a2b8;
+    color: #f1f1f1;
+}
+.btn-tema:hover{
+    background-color: transparent;
+    border-color: #17a2b8;
+    color: #17a2b8;
+}
+
+/*===========================================================================
+                                FORM
+===========================================================================*/
+form .error {
+    color: #ff0000;
+    padding-left: 4px;
+    margin-top: -18px;
+    padding-bottom: 10px;
+}
+form .main-form{
+    background-color: #fff;
+    max-width: auto;
+    margin-top: 20px;
+    margin-bottom: auto;
+    padding: 20px 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+}
+.main-form .form-icon{
+	text-align: center;
+    background-color: #17a2b8;
+    border-radius: 50%;
+    font-size: 40px;
+    color: white;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    padding-top: 25px;
+    margin-bottom: 35px;
+    line-height: 100px;
+}
+.main-form .item{
+	border-radius: 10px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+}
+.main-form .item:focus{
+	box-shadow: 0 0 10px #17a2b8;
+}
+form .layanan-form{
+    background-color: #fff;
+    max-width: auto;
+    margin-top: 20px;
+    margin-bottom: auto;
+    padding: 20px 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+}
+.layanan-form input:focus{
+	box-shadow: 0 0 10px #17a2b8;
+}
+.form-footer{
+    max-width: auto;
+    background-color: #fff;
+    margin: auto;
+    padding: 20px 0 10px 0;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #9fadca;
+    border-top: 1px solid #dee9ff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+@media (max-width: 576px) {
+    form .main-form, form .layanan-form{
+        padding: 50px 20px;
+    }
+    .main-form .form-icon{
+        width: 80px;
+        height: 80px;
+        font-size: 30px;
+        line-height: 70px;
+    }
+}
+
+/*===========================================================================
+                                CARD BERANDA
+===========================================================================*/
+.card{
+    border-radius: 1em;
+}
+.card .frame-gambar{
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    display: block;
+    overflow: hidden;
+}
+.card .img-pelayanan{
+    height: 240px;
+    filter: grayscale(100%);
+    -webkit-transition: all .4s linear;
+    -o-transition: all .4s linear;
+    transition: all .4s linear;
+}
+.card .card-title{
+    -webkit-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+}
+.card:hover .img-pelayanan{
+    filter: none;  
+    transform: scale(1.3);
+    transform-origin: 50% 50%;     
+}
+.card:hover .card-title{   
+    transform: scale(1.1);
+    transform-origin: 50% 50%;
+    color: #17a2b8;
+    font-weight: bolder;
+}

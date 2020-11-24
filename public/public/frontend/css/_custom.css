@@ -1,0 +1,181 @@
+/*========================================================================================
+    Project     : Sipaten (Web Pelayanan Administrasi Online Kecamatan)
+    Created by  : Moch Arief Rahman Saleh (Junior Programmer)
+	Company     : Dinas Komunikasi dan Informatika Kabupaten Subang
+    Created November 2020
+    ~ Menuju tak terbatas dan melampauinya ~
+    ~ Hidup adalah udunan ~
+    ~ Bersatu kita teguh bercerai kita kawin lagi ~    
+=========================================================================================*/
+
+/*===========================================================================
+                                Utility Setup
+===========================================================================*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+#content-desktop {display: block;}
+#content-mobile {display: none;}
+@media screen and (max-width:600px){
+  #content-desktop {display: none;}
+  #content-mobile {display: block;}
+}
+
+/*===========================================================================
+                                    TEXT
+===========================================================================*/
+.font-kecil-1 {
+    font-size: 12px;
+    line-height: 1.7;
+}
+.font-kecil-2 {
+    font-size: 14px;
+    line-height: 1.7;
+}
+.font-kecil-3 {
+    font-size: 15px;
+    line-height: 1.333333;
+}
+.font-sedang-1 {
+    font-size: 18px;
+    line-height: 1.333333;
+}
+.font-sedang-2 {
+    font-size: 20px;
+    line-height: 1.25;
+}
+.font-sedang-3 {
+    font-size: 24px;
+    line-height: 1.3;
+}
+.font-besar-1 {
+    font-size: 22px;
+    line-height: 1.272727;
+}
+.font-besar-2 {
+    font-size: 30px;
+    line-height: 1.3;
+}
+.font-besar-3 {
+    font-size: 36px;
+    line-height: 1.333333;
+}
+
+/*===========================================================================
+                                PAGINATION
+===========================================================================*/
+.pagination {
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+}
+
+/*===========================================================================
+                                SEARCH BUTTON
+===========================================================================*/
+.openBtn {
+    background: #6c757d;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.openBtn:hover {
+    background: grey;
+}
+.overlay-search {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+}
+.overlay-content {
+    position: relative;
+    top: 46%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+.overlay-search .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+.overlay-search .closebtn:hover {
+    color: #ccc;
+}
+.overlay-search input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 80%;
+    background: white;
+}
+.overlay-search input[type=text]:hover {
+    background: #f1f1f1;
+}
+.overlay-search button {
+    float: left;
+    width: 20%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+.overlay-search button:hover {
+    background: #bbb;
+}
+
+/*===========================================================================
+                                    FOOTER
+===========================================================================*/
+.line-footer-white{
+    width: 100%;
+    height: 60px;
+    background-image: url('../img/footer.png');
+    overflow: hidden;
+    background-repeat:repeat-x;
+    background-position: bottom;
+    background-size: contain;
+}
+.line-footer-black{
+    width: 100%;
+    height: 60px;
+    background-image: url('../img/footerblack.png');
+    background-repeat:repeat-x;
+    background-position: bottom;
+    overflow: hidden;
+    background-size: contain;
+}
+.line-footer-grey{
+    width: 100%;
+    height: 60px;
+    background-image: url('../img/footergrey.png');
+    background-repeat:repeat-x;
+    background-position: bottom;
+    overflow: hidden;
+    background-size: contain;
+}
+
+/*===========================================================================
+                                CONTENT
+===========================================================================*/
+#welcome{
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
