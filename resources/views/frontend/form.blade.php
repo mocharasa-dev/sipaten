@@ -1,25 +1,15 @@
 @extends('frontend.layout.app')
 @section('title', 'Contoh Form | Sipaten')
-@push('Meta')
+@section('Meta')
 <meta name="description" content="Pelayanan Administrasi Online Kecamatan" />
 <meta name="keywords" content="Sipaten" />
 <meta property="og:title" content="Sipaten" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="Sipaten" />
 <meta property="og:image" content="{{asset('public/assets/default.jpg')}}" />
-@endpush
+@endsection
 
 @section('content')
-<header class="video-header">
-    <video id="welcome" src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/Island%20-%204141.mp4" autoplay loop playsinline muted></video>
-    <!-- <img id="welcome" src="https://images.squarespace-cdn.com/content/v1/5a5906400abd0406785519dd/1552662149940-G6MMFW3JC2J61UBPROJ5/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/baelen.jpg?format=1500w" alt=""> -->
-    <div class="viewport-header">
-      <h1>
-        SELAMAT DATANG
-        <span>SLURRR</span>
-      </h1>
-    </div>
-</header>
 @include('frontend.layout.menu')
 <main class="bg-parallax">
  <div class="container py-2">
@@ -59,11 +49,11 @@
                     <input type="text" class="form-control" name="nama" placeholder="">
                   </div>
                 </div> 
-                {{-- <div class="col-lg-12 col-sm-12 px-2">
+                <div class="col-lg-12 col-sm-12 px-2">
                   <label for="">Data Anak</label>
                   <div id="inputFormRow">
                     <div class="input-group mb-3">
-                        <input type="text" name="nama_anak[]" class="form-control m-input" placeholder="Nama Anak" autocomplete="off">
+                        <input type="text" name="title[]" class="form-control m-input" placeholder="Enter title" autocomplete="off">
                         <div class="input-group-append">                
                             <button id="removeRow" type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                         </div>
@@ -72,42 +62,49 @@
       
                   <div id="newRow"></div>
                   <button id="addRow" type="button" class="btn btn-info"><i class="fa fa-plus-square"></i>&nbsp; Tambah Data</button>
-                </div>   --}}   
-                 
-                <div class="col-lg-12 col-sm-12 px-2">
+                </div>
+                {{-- <div class="col-lg-12 col-sm-12 px-2">
                   <label for="">Data Anak</label>
-                  <div id="inputFormRow">  
-                    <div class="input-group mb-3">
-                      <input type="text" name="nama_[]" aria-label="nama_[]" class="form-control" placeholder="nama">
-                      <input type="text" name="nik_[]" aria-label="nik_[]" class="form-control" placeholder="nik">
-                      <input type="text" name="alamat_[]" aria-label="alamat_[]" class="form-control" placeholder="alamat">
-                      <div class="input-group-append">                
-                        <button id="removeRow" type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                  <div class="form-group" id="dynamic_form">                    
+                    <div class="row">
+                      <div class="col-md-4 pr-1">
+                          <input type="text" name="nama_" id="nama_" placeholder="Nama Anak" class="form-control">
                       </div>
-                    </div>  
-                  </div>
-                  <div id="newRow"></div>
-                  <button id="addRow" type="button" class="btn btn-info"><i class="fa fa-plus-square"></i>&nbsp; Tambah Data</button>
-                </div>         
+                      <div class="col-md-3 pr-1">
+                          <input type="text" class="form-control" name="nik_" id="nik_" placeholder="NIK Anak" onkeyup = "if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')";>
+                      </div>
+                      <div class="col-md-4 pr-1">
+                          <textarea class="form-control" rows="1" name="alamat" placeholder="Alamat Anak" id="alamat"></textarea>
+                      </div>
+                      <div class="button-group">
+                          <a href="javascript:void(0)" class="btn btn-info" id="plus5" style="height:calc(1.5em + 0.75rem + 2px);padding-top:10px"><i class="fa fa-plus"></i></a>
+                          <a href="javascript:void(0)" class="btn btn-danger" id="minus5" style="height:calc(1.5em + 0.75rem + 2px);padding-top:10px"><i class="fa fa-trash"></i></a>
+                      </div>
+                    </div>
+                  </div>  
+                </div>                --}}
             </div>
         </div>
-        <div class="form-footer">            
+        <div class="form-footer">
+            
                 <button type="submit" class="btn btn-tema">Submit</button>
-                <button type="reset" class="btn btn-danger">Reset</button>                     
-        </div>        
+                <button type="reset" class="btn btn-danger">Reset</button>
+                     
+        </div>
+        <div id="server-results"><!-- For server results --></div>
     </form>
             
  </div>    
 </main>
 @endsection
 
-@push('top-resource')
+@section('top-resource')
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.9/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
 
-@endpush
+@endsection
 
-@push('bottom-resource')
+@section('bottom-resource')
 <script src="{{asset('public/frontend/js/dynamic-form.js')}}"></script>
 <!-- the main fileinput plugin file -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.9/js/fileinput.min.js"></script>
@@ -115,19 +112,52 @@
 <script>
 $("#input-id").fileinput();
 </script>
+{{-- <script>
+  $(document).ready(function() {
+    var dynamic_form =  $("#dynamic_form").dynamicForm("#dynamic_form","#plus5", "#minus5", {
+      limit:15,
+      formPrefix : "form_anak",
+      normalizeFullForm : false
+  });
+
+    // dynamic_form.inject([{p_name: 'Hemant',quantity: '123',remarks: 'testing remark'},{p_name: 'Harshal',quantity: '123',remarks: 'testing remark'}]);
+
+  $("#dynamic_form #minus5").on('click', function(){
+    var initDynamicId = $(this).closest('#dynamic_form').parent().find("[id^='dynamic_form']").length;
+    if (initDynamicId === 2) {
+      $(this).closest('#dynamic_form').next().find('#minus5').hide();
+    }
+    $(this).closest('#dynamic_form').remove();
+  });
+
+  $('form').on('submit', function(event){
+      var values = {};
+      $.each($('form').serializeArray(), function(i, field) {
+          values[field.name] = field.value;
+      });
+      console.log(values);
+      event.preventDefault();
+      var post_url = $(this).attr("action"); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+      
+      $.post( post_url, form_data, function( response ) {
+        $("#server-results").html( response );
+      });
+    });
+  });
+</script> --}}
 <script type="text/javascript">
   // add row
   $("#addRow").click(function () {
       var html = '';
       html += '<div id="inputFormRow">';
       html += '<div class="input-group mb-3">';
-      html += '<input type="text" name="nama_[]" aria-label="nama_[]" class="form-control" placeholder="nama">';
-      html += '<input type="text" name="nik_[]" aria-label="nik_[]" class="form-control" placeholder="nik">';
-      html += '<input type="text" name="alamat_[]" aria-label="alamat_[]" class="form-control" placeholder="alamat">';
+      html += '<input type="text" name="title[]" class="form-control m-input" placeholder="Enter title" autocomplete="off">';
       html += '<div class="input-group-append">';
       html += '<button id="removeRow" type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>';
       html += '</div>';
       html += '</div>';
+
       $('#newRow').append(html);
   });
   // remove row
@@ -135,4 +165,4 @@ $("#input-id").fileinput();
       $(this).closest('#inputFormRow').remove();
   });
 </script>
-@endpush
+@endsection

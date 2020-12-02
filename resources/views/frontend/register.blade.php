@@ -1,12 +1,12 @@
 @extends('frontend.layout.app')
 @section('title', 'Register | Sipaten')
-@section('Meta')
+@push('Meta')
 <meta name="description" content="Pelayanan Administrasi Online Kecamatan" />
 <meta name="keywords" content="Sipaten" />
 <meta property="og:title" content="Sipaten" />
 <meta property="og:type" content="Sipaten" />
 <meta property="og:image" content="{{asset('public/assets/default.jpg')}}" />
-@endsection
+@endpush
 
 @section('content')
 @include('frontend.layout.menu')
@@ -103,12 +103,12 @@
 </main>
 @endsection
 
-@section('top-resource')
+@push('top-resource')
 <style>
 
 </style>
-@endsection
-@section('bottom-resource')
+@endpush
+@push('bottom-resource')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script>
@@ -163,4 +163,4 @@ $(function() {
   });
 });
 </script> 
-@endsection
+@endpush

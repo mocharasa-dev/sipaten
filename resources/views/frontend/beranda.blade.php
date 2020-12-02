@@ -1,12 +1,12 @@
 @extends('frontend.layout.app')
 @section('title', 'Beranda | Sipaten')
-@section('Meta')
+@push('Meta')
 <meta name="description" content="Pelayanan Administrasi Online Kecamatan" />
 <meta name="keywords" content="Sipaten" />
 <meta property="og:title" content="Sipaten" />
 <meta property="og:type" content="Website" />
 <meta property="og:image" content="{{asset('public/assets/default.jpg')}}" />
-@endsection
+@endpush
 
 @section('content')
 
@@ -57,7 +57,7 @@
                   <center>                        
                     <a href="" class="btn btn-tema btn-sm px-2 py-2 mx-2" data-toggle="modal" data-target="#detail" data-tooltip="tooltip" data-placement="top" title="Lihat Detail Layanan"><i class="fas fa-info-circle fa-2x"></i></a>                                                                    
                     <a href="" class="btn btn-tema btn-sm px-2 py-2 mx-2" data-toggle="modal" data-target="#persyaratan" data-tooltip="tooltip" data-placement="bottom" title="Lihat Persyaratan"><i class="fas fa-scroll fa-2x"></i></a>                        
-                    <a href="{{route('frontend.form')}}" class="btn btn-tema btn-sm px-2 py-2 mx-2" data-tooltip="tooltip" data-placement="top" title="Gunakan Layanan"><i class="fas fa-pen-square fa-2x"></i></a>
+                    <a href="{{route('frontend.form.wizard')}}" class="btn btn-tema btn-sm px-2 py-2 mx-2" data-tooltip="tooltip" data-placement="top" title="Gunakan Layanan"><i class="fas fa-pen-square fa-2x"></i></a>
                   </center>                      
                 </div>
             </div>
@@ -93,7 +93,7 @@
                   <center>                        
                     <a href="" class="btn btn-tema btn-sm px-2 py-2 mx-2" data-toggle="modal" data-target="#detail" data-tooltip="tooltip" data-placement="top" title="Lihat Detail Layanan"><i class="fas fa-info-circle fa-2x"></i></a>                                                                    
                     <a href="" class="btn btn-tema btn-sm px-2 py-2 mx-2" data-toggle="modal" data-target="#persyaratan" data-tooltip="tooltip" data-placement="bottom" title="Lihat Persyaratan"><i class="fas fa-scroll fa-2x"></i></a>                        
-                    <a href="{{route('frontend.form')}}" class="btn btn-tema btn-sm px-2 py-2 mx-2" data-tooltip="tooltip" data-placement="top" title="Gunakan Layanan"><i class="fas fa-pen-square fa-2x"></i></a>
+                    <a href="{{route('frontend.form.wizard')}}" class="btn btn-tema btn-sm px-2 py-2 mx-2" data-tooltip="tooltip" data-placement="top" title="Gunakan Layanan"><i class="fas fa-pen-square fa-2x"></i></a>
                   </center>                      
                 </div>
             </div>
@@ -205,7 +205,7 @@
 
 @endsection
 
-@section('top-resource')
+@push('top-resource')
 <style>
 canvas {
   display: block;
@@ -223,8 +223,8 @@ canvas {
   transform: translateY(-50%);
 }
 </style>
-@endsection
-@section('bottom-resource') 
+@endpush
+@push('bottom-resource') 
 <script src="{{asset('public/frontend/js/particles.min.js')}}"></script>
 <script src="{{asset('public/frontend/js/particleconfig.js')}}"></script>
-@endsection
+@endpush

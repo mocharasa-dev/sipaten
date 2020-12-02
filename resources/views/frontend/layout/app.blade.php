@@ -4,14 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@yield('title')</title>
-    @yield('meta')
+    @stack('meta')
     {{-- <link rel="shortcut icon" href="{{asset('public/assets/favicon.ico')}}" /> --}}
     <!-- loaded Style/CSS/Plugin -->
     <link rel="stylesheet" href="{{asset('public/frontend/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/custom.css')}}">
     <link rel="stylesheet" href="{{asset('public/frontend/plugin/fontawesome/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/animate.min.css')}}" />
-    @yield('top-resource')
+    @stack('top-resource')
     <style>
         .preloader {
             position: fixed;
@@ -52,18 +52,6 @@
     </div>
 </div>
 
-<!-- Search Overlay -->   
-<div id="myOverlay" class="overlay-search">
-    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
-    <div class="overlay-content">
-        <form action="{{--route('frontend.search')--}}" method="POST">
-            {{csrf_field()}}
-            <input type="text" placeholder="Cari..." name="keyword">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-</div>
-
 <div class="wrapper">
     <nav class="navbar navbar-light navbar-expand-md small bg-light justify-content-center shadow-sm py-0 py-sm-0">
         <div class="container">
@@ -97,7 +85,7 @@
 <script src="{{asset('public/frontend/js/bootstrap.bundle.min.js')}}"></script>   
 <script src="{{asset('public/frontend/plugin/fontawesome/js/all.min.js')}}"></script> 
 <script src="{{asset('public/frontend/js/wow.min.js')}}"></script>
-@yield('bottom-resource')
+@stack('bottom-resource')
 <!-- tooltip -->
 <script>
     $('[data-tooltip="tooltip"]').each(function () {

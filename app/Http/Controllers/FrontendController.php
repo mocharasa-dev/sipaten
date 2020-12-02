@@ -32,7 +32,19 @@ class FrontendController extends Controller
 
     public function formSubmit(Request $request){
         try{
-
+            $data['form'] = [
+                'file_ktp'  => $request->input('file_ktp'),
+                'file_kk'   => $request->input('file_kk'),
+                'nik'       => $request->input('nik'),
+                'no_kk'     => $request->input('no_kk'),
+                'nama'      => $request->input('nama'),
+            ];
+            $data['anak'] = [
+                'nama_' => $request->input('nama_'),
+                'nik_' => $request->input('nik_'),
+                'alamat_' => $request->input('alamat_'),
+            ];
+            dd($data);
         }catch(\Exception $e){
             return back();
         }
@@ -40,5 +52,33 @@ class FrontendController extends Controller
 
     public function formValidate(){
         return view('frontend.layanan.form-validate');
+    }
+
+    public function formWizard(){
+        return view('frontend.layanan.form-wizard');
+    }
+
+    public function formWizardSubmit(Request $request){
+        try{
+            $data['form'] = [
+                'file_ktp'  => $request->input('file_ktp'),
+                'file_sp'   => $request->input('file_sp_rtrw'),
+                'nik'       => $request->input('nik'),
+                'no_kk'     => $request->input('no_kk'),
+                'nama'      => $request->input('nama'),
+            ];
+            $data['anak'] = [
+                'nama_' => $request->input('nama_'),
+                'nik_' => $request->input('nik_'),
+                'alamat_' => $request->input('alamat_'),
+            ];
+            dd($data);
+        }catch(\Exception $e){
+            return back();
+        }
+    }
+
+    public function page(){
+        return view('frontend.page');
     }
 }

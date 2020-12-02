@@ -24,4 +24,8 @@ Route::get('/register', [FrontendController::class, 'register'])->name('frontend
 Route::get('/kritik-saran', [FrontendController::class, 'kritsar'])->name('frontend.saran');
 
 Route::get('/form', [FrontendController::class, 'formContoh'])->name('frontend.form');
+Route::post('/form', [FrontendController::class, 'formSubmit'])->name('frontend.submit');
+Route::get('/form/wizard', [FrontendController::class, 'formWizard'])->name('frontend.form.wizard');
+Route::post('/form/wizard', [FrontendController::class, 'formWizardSubmit'])->name('frontend.form.wizard.submit');
 Route::get('/form/validate', [FrontendController::class, 'formValidate'])->name('frontend.form.validate');
+Route::get('/page', [FrontendController::class, 'page'])->name('frontend.page');

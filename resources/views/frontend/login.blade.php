@@ -1,12 +1,12 @@
 @extends('frontend.layout.app')
 @section('title', 'Login | Sipaten')
-@section('Meta')
+@push('Meta')
 <meta name="description" content="Pelayanan Administrasi Online Kecamatan" />
 <meta name="keywords" content="Sipaten" />
 <meta property="og:title" content="Sipaten" />
 <meta property="og:type" content="Sipaten" />
 <meta property="og:image" content="{{asset('public/assets/default.jpg')}}" />
-@endsection
+@endpush
 
 @section('content')
 @include('frontend.layout.menu')
@@ -20,12 +20,12 @@
                     <span><i class="fas fa-user"></i></span>
                 </div>
                 <div class="form-group row">
-                    <input type="text" class="form-control col-lg-12 col-sm-12 item" name="nik" id="nik" placeholder="NIK" required oninvalid="this.setCustomValidity('Silahkan Masukkan NIK')" oninput="setCustomValidity('')">
+                    <input type="text" class="form-control item" name="nik" id="nik" placeholder="NIK" required oninvalid="this.setCustomValidity('Silahkan Masukkan NIK')" oninput="setCustomValidity('')">
                 </div>
                 <div class="form-group row">
                     <div class="input-group col-lg-12 col-sm-12">                      
                       <input type="password" class="form-control item" name="password" id="password" placeholder="Password" autocomplete="new-password" required oninvalid="this.setCustomValidity('Silahkan Masukkan Password')" oninput="setCustomValidity('')">                      
-                      <div class="input-group-append col-lg-1 col-sm-1">
+                      <div class="input-group-append">
                         <span class="input-group-text"><i toggle="#password-field" class="fa fa-eye-slash toggle-password"></i></span>
                       </div>
                     </div>                    
@@ -46,7 +46,7 @@
 </main>
 @endsection
 
-@section('top-resource')
+@push('top-resource')
 <style>
 .login-form{
 	padding: 50px 0;
@@ -74,15 +74,13 @@
     line-height: 100px;
 }
 .login-form .item{
-	border-radius: 10px;
-    margin-bottom: 25px;
-    padding: 10px 20px;
+	border-radius: 10px;    
+  padding: 10px 20px;
 }
 .login-form .item:focus{
 	box-shadow: 0 0 10px #17a2b8;
 }
-.login-form .input-group-append > .input-group-text{
-  margin-bottom: 25px;
+.login-form .input-group-append > .input-group-text{  
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -110,8 +108,8 @@
     }
 }
 </style>
-@endsection
-@section('bottom-resource')
+@endpush
+@push('bottom-resource')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 {{-- <script>
@@ -158,4 +156,4 @@ $(document).on('click', '.toggle-password', function() {
   input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
 });
 </script>
-@endsection
+@endpush
